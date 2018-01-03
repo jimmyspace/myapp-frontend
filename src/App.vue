@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <div class="link">
+      <router-link to="/">Hellow</router-link>
+      <router-link to="/List">List</router-link>
+    </div>
     <router-view/>
   </div>
 </template>
@@ -19,5 +23,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.link{
+  font-size: 30px;
 }
 </style>
