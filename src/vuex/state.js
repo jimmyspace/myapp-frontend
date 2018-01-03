@@ -10,15 +10,15 @@ const state = {
   loginState: false,
   loginName: 'Jimmy',
   newsList: [
-  	{content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: false},
-  	{content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: true},
-  	{content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: true},
-  	{content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: false},
-  	{content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false},
-  	{content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: true},
-  	{content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: true},
-  	{content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false},
-  	{content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false}
+  	{id: 1, content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: false, read:0},
+  	{id: 2, content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: true, read:0},
+  	{id: 3, content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: true, read:0},
+  	{id: 4, content: '中央军委首次举行开训动员大会', isnew: false, isMilitary: false, read:0},
+  	{id: 5, content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false, read:0},
+  	{id: 6, content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: true, read:0},
+  	{id: 7, content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: true, read:0},
+  	{id: 8, content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false, read:0},
+  	{id: 9, content: '中央军委首次举行开训动员大会', isnew: true, isMilitary: false, read:0}
   ]
 }
 

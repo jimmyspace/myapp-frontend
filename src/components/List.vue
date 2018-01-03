@@ -3,15 +3,15 @@
     <div @click="changLoginAction()">{{loginState?loginName:'未登录'}}</div>
     <div>全部新闻</div>
     <ul>
-      <li v-for="(item,index) in newsList" :key="index">{{item.content}}</li>
+      <li v-for="(item,index) in newsList" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读{{item.read}}次</li>
     </ul>
     <div>最新的新闻</div>
     <ul>
-      <li v-for="(item,index) in getNew" :key="index">{{item.content}}</li>
+      <li v-for="(item,index) in getNew" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读{{item.read}}次</li>
     </ul>
     <div>最新的军事新闻</div>
     <ul>
-      <li v-for="(item,index) in getNewMilitary" :key="index">{{item.content}}</li>
+      <li v-for="(item,index) in getNewMilitary" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读{{item.read}}次</li>
     </ul>
   </div>
 </template>
@@ -48,6 +48,18 @@ export default {
     changLoginMutation(){
       this.$store.commit('changeLogin')
     },
+    readNewMutation(id){
+      this.$store.commit({
+        type: 'readNew',
+        id: id
+      })
+    },
+    readNewAction(id){
+      this.$store.dispatch({
+        type: 'readNew',
+        id: id
+      })
+    }
   }
 }
 </script>

@@ -2,11 +2,17 @@
   <div class="hello">
     <div @click="changLoginAction()">{{loginState?loginName:'未登录'}}</div>
     <h1>{{ msg }}</h1>
+    <div>最新的军事新闻</div>
+    <ul>
+      <li v-for="(item,index) in getNewMilitary" :key="index">{{item.content}}--阅读{{item.read}}次</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
   name: 'HelloWorld',
   data () {
@@ -19,6 +25,10 @@ export default {
     ...mapState([
         'loginState',
         'loginName'
+      ]),
+     ...mapGetters([
+        'getNew',
+        'getNewMilitary'
       ])
   },
   methods:{
@@ -27,7 +37,7 @@ export default {
     },
     changLoginMutation(){
       this.$store.commit('changeLogin')
-    },
+    }
   }
 }
 </script>
