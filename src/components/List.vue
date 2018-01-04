@@ -3,15 +3,19 @@
     <div @click="changLoginAction()">{{loginState?loginName:'未登录'}}</div>
     <div>全部新闻</div>
     <ul>
-      <li v-for="(item,index) in newsList" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读{{item.read}}次</li>
+      <li v-for="(item,index) in newsList" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
     <div>最新的新闻</div>
     <ul>
-      <li v-for="(item,index) in getNew" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读{{item.read}}次</li>
+      <li v-for="(item,index) in getNew" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
     <div>最新的军事新闻</div>
     <ul>
-      <li v-for="(item,index) in getNewMilitary" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读{{item.read}}次</li>
+      <li v-for="(item,index) in getNewMilitary" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
+    </ul>
+    <div @click="sortList()">一般的新闻</div>
+    <ul>
+      <li v-for="(item,index) in normalNews" :key="index" @click="actionSomething()">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
   </div>
 </template>
@@ -39,6 +43,12 @@ export default {
     },
     getNewMilitary(){
       return this.$store.getters.getNewMilitary
+    },
+    normalNews(){
+      return this.$store.state.listModule.list
+    },
+    sortFlag(){
+      return this.$store.state.listModule.sortFlag
     }
   },
   methods:{
@@ -59,13 +69,32 @@ export default {
         type: 'readNew',
         id: id
       })
+    },
+    sortList(){
+      // this.$store.commit({
+      //   type: 'listModule/sortList',
+      //   sortFlag: !this.sortFlag
+      // })
+      this.$store.dispatch({
+        type: 'listModule/sortList',
+        sortFlag: !this.sortFlag
+      })
+    },
+    actionSomething(){
+      this.$store.dispatch('listModule/actionSomething')
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="less">
+.hello{
+  display: block;
+  ul{
+    display: block;
+  }
+}
 h1, h2 {
   font-weight: normal;
 }
@@ -74,7 +103,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {
