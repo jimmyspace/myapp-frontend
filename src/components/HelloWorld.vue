@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
     <div @click="changLoginAction()">{{loginState?loginName:'未登录'}}</div>
+    <div @click="sayDate()">say something</div>
     <h1>{{ msg }}</h1>
     <div>最新的军事新闻</div>
     <ul>
-      <li v-for="(item,index) in getNewMilitary" :key="index">{{item.content}}--阅读{{item.read}}次</li>
+      <li v-for="(item,index) in getNewMilitary" :key="index">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
   </div>
 </template>
@@ -37,6 +38,14 @@ export default {
     },
     changLoginMutation(){
       this.$store.commit('changeLogin')
+    },
+    sayBeaut(){
+      this.$store.dispatch('sayBeaut').then(()=>{
+        console.log("sb")
+      })
+    },
+    sayDate(){
+      this.$store.dispatch('sayDate')
     }
   }
 }

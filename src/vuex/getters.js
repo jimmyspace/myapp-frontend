@@ -5,7 +5,7 @@ const getters = {
   },
   //获取最新的军事新闻
   getNewMilitary: (state, getters) => {
-  	return getters.getNew.filter(item => item.isMilitary)
+    return getters.getNew.filter(item => item.isMilitary)
   }
 }
 
