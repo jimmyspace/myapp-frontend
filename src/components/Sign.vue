@@ -1,19 +1,12 @@
 <template>
-  <div class="jsilde">
-  	<ul>
-		<li>Home</li>
-		<li>Mood</li>
-		<li>Code</li>
-		<li>Music</li>
-		<li>about</li>
-  	</ul>
+  <div class="sign">
+    注册登录
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Jsilde'
+  name: 'Sign',
 }
 </script>
 

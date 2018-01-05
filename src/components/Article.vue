@@ -1,19 +1,13 @@
 <template>
-  <div class="jsilde">
-  	<ul>
-		<li>Home</li>
-		<li>Mood</li>
-		<li>Code</li>
-		<li>Music</li>
-		<li>about</li>
-  	</ul>
+  <div class="article">
+    文章内容
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'Jsilde'
+  name: 'Article'
 }
 </script>
 

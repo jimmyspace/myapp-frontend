@@ -1,37 +1,34 @@
 <template>
   <div id="app">
-    <header>
-      <img src="./assets/logo.png">
-      <div class="link">
-        <router-link to="/">Hellow</router-link>
-        <router-link to="/List">List</router-link>
-      </div>
-    </header>
+    <jheader></jheader>
+    <!-- <div class="link">
+      <router-link to="/">Hellow</router-link>
+      <router-link to="/List">List</router-link>
+    </div> -->
+    <div class="link">
+      <router-link to="/">index</router-link>
+      <router-link to="/article">article</router-link>
+      <router-link to="/sign">sign</router-link>
+      <router-link to="/edit">edit</router-link>
+      <router-link to="/user">user</router-link>
+    </div>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Jheader from '@/components/common/Jheader'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Jheader
+  }
 }
 </script>
 
 <style>
-*{
-  margin: 0;
-  padding: 0;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  /*margin-top: 60px;*/
-}
-header{
-  background: #ccc;
+#app{
+  padding-top: 4.5em;
 }
 .link{
   font-size: 30px;

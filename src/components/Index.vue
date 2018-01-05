@@ -1,19 +1,17 @@
 <template>
-  <div class="jsilde">
-  	<ul>
-		<li>Home</li>
-		<li>Mood</li>
-		<li>Code</li>
-		<li>Music</li>
-		<li>about</li>
-  	</ul>
+  <div class="index">
+    首页
+    <jside></jside> 
   </div>
 </template>
 
 <script>
-
+import Jside from '@/components/common/Jside'
 export default {
-  name: 'Jsilde'
+  name: 'Index',
+  components: {
+    Jside
+  }
 }
 </script>
 
