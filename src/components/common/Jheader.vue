@@ -1,6 +1,9 @@
 <template>
   <header class="header">
-    <nav class="nav"></nav>
+    <nav class="nav">
+      <div class="title"><router-link to="/">左边网站左边title</router-link></div>
+      <div class="userArea"><router-link to="/user">用户中心</router-link></div>
+    </nav>
   </header>
 </template>
 
@@ -20,5 +23,20 @@ export default {
   height: 4.5em;
   background: hsla(0,0%,100%,.6);
   z-index: 99;
+  .nav{
+    margin: 0 auto;
+    width: 75em;
+    height: 100%;
+    .title{
+      float: left;
+      height: 100%;
+      line-height: 4.5em
+    }
+    .userArea{
+      float: right;
+      height: 100%;
+      line-height: 4.5em;
+    }
+  }
 }
 </style>

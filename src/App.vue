@@ -5,13 +5,6 @@
       <router-link to="/">Hellow</router-link>
       <router-link to="/List">List</router-link>
     </div> -->
-    <div class="link">
-      <router-link to="/">index</router-link>
-      <router-link to="/article">article</router-link>
-      <router-link to="/sign">sign</router-link>
-      <router-link to="/edit">edit</router-link>
-      <router-link to="/user">user</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
