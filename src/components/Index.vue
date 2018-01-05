@@ -1,18 +1,16 @@
 <template>
   <div class="index">
     <jside></jside>
-    <articles></articles>	
+    <router-view/>	
   </div>
 </template>
 
 <script>
 import Jside from '@/components/common/Jside'
-import Articles from '@/components/common/Articles'
 export default {
   name: 'Index',
   components: {
-    Jside,
-    Articles
+    Jside
   }
 }
 </script>
