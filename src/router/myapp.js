@@ -13,10 +13,17 @@ export default new Router({
   mode: 'history',
   routes: [{
       path: '/',
-      name: 'Index',
       component: Index,
       children: [{
-          path: '',
+          path: '/',
+          component: Articles
+        },
+        {
+          path: '/code',
+          component: Articles
+        },
+        {
+          path: '/mood',
           component: Articles
         },
         {

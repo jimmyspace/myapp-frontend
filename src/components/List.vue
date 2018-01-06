@@ -83,6 +83,9 @@ export default {
     actionSomething(){
       this.$store.dispatch('listModule/actionSomething')
     }
+  },
+  mounted(){
+    this.$store.dispatch('getArticles')
   }
 }
 </script>

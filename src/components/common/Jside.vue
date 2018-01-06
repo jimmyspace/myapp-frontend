@@ -1,11 +1,11 @@
 <template>
   <div class="jside">
   	<ul class="sideNav">
-		<li class="sideItem active">Home</li>
-		<li class="sideItem">Mood</li>
-		<li class="sideItem">Code</li>
-		<li class="sideItem">Music</li>
-		<li class="sideItem">about</li>
+		<li class="sideItem"><router-link to="/">Home</router-link></li>
+		<li class="sideItem"><router-link to="/code">Code</router-link></li>
+		<li class="sideItem"><router-link to="/mood">Mood</router-link></li>
+		<li class="sideItem"><router-link to="/mood">Music</router-link></li>
+		<li class="sideItem"><router-link to="/mood">Mood</router-link></li>
   	</ul>
   </div>
 </template>
@@ -13,7 +13,9 @@
 <script>
 
 export default {
-  name: 'Jside'
+  name: 'Jside',
+  methods: {
+  }
 }
 </script>
 
@@ -24,9 +26,9 @@ export default {
     display: inline-block;
     width: 11.5em;
     top: 5.5em;
-    left: calc((100% - 75em) / 2);
+    left: calc(~"50% - 37.5em");
     .sideNav{
-    	.sideItem{
+    	.sideItem a{
     		border: none;
 		    display: block;
 		    width: 100%;

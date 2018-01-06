@@ -6,15 +6,18 @@
       <router-link to="/List">List</router-link>
     </div> -->
     <router-view/>
+    <jfooter></jfooter> 
   </div>
 </template>
 
 <script>
 import Jheader from '@/components/common/Jheader'
+import Jfooter from '@/components/common/Jfooter'
 export default {
   name: 'app',
   components: {
-    Jheader
+    Jheader,
+    Jfooter
   }
 }
 </script>

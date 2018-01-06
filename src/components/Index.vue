@@ -20,6 +20,8 @@ export default {
 .index{
 	position: relative;
 	width: 75em;
+  min-height: 16em;
 	margin: 0 auto;
+  overflow: hidden;
 }
 </style>
