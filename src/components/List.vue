@@ -13,10 +13,10 @@
     <ul>
       <li v-for="(item,index) in getNewMilitary" :style="item.isMilitary?'color:red':''" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
-    <!-- <div @click="sortList()">一般的新闻</div>
+    <div @click="sortList()">list</div>
     <ul>
       <li v-for="(item,index) in normalNews" :key="index" @click="actionSomething()">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
-    </ul> -->
+    </ul>
   </div>
 </template>
 
@@ -76,7 +76,7 @@ export default {
       //   sortFlag: !this.sortFlag
       // })
       this.$store.dispatch({
-        type: 'listModule/sortList',
+        type: 'sortList',
         sortFlag: !this.sortFlag
       })
     },

@@ -1,7 +1,10 @@
 const mutations = {
   changeLogin(state) {
     console.log("1秒后")
-    state.loginState = !state.loginState
+    setTimeout(function(){
+      state.loginState = !state.loginState
+    },3000)
+    // state.loginState = !state.loginState
   },
   readNew(state, payload) {
     console.log('1秒后')
