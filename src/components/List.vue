@@ -3,20 +3,20 @@
     <div @click="changLoginAction()">{{loginState?loginName:'未登录'}}</div>
     <div>全部新闻</div>
     <ul>
-      <li v-for="(item,index) in newsList" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
+      <li v-for="(item,index) in newsList" :style="item.isMilitary?'color:red':''" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
     <div>最新的新闻</div>
     <ul>
-      <li v-for="(item,index) in getNew" :key="index" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
+      <li v-for="(item,index) in getNew"  :key="index" :style="item.isMilitary?'color:red':''" @click="readNewMutation(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
     <div>最新的军事新闻</div>
     <ul>
-      <li v-for="(item,index) in getNewMilitary" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
+      <li v-for="(item,index) in getNewMilitary" :style="item.isMilitary?'color:red':''" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
-    <div @click="sortList()">一般的新闻</div>
+    <!-- <div @click="sortList()">一般的新闻</div>
     <ul>
       <li v-for="(item,index) in normalNews" :key="index" @click="actionSomething()">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -83,9 +83,6 @@ export default {
     actionSomething(){
       this.$store.dispatch('listModule/actionSomething')
     }
-  },
-  mounted(){
-    this.$store.dispatch('getArticles')
   }
 }
 </script>

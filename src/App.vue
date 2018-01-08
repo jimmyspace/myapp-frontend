@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <jheader></jheader>
-    <!-- <div class="link">
+    <!-- <jheader></jheader> -->
+    <div class="link">
       <router-link to="/">Hellow</router-link>
       <router-link to="/List">List</router-link>
-    </div> -->
+    </div>
     <router-view/>
-    <jfooter></jfooter> 
+    <!-- <jfooter></jfooter> --> 
   </div>
 </template>
 
@@ -24,9 +24,21 @@ export default {
 
 <style>
 #app{
+  text-align: center;
   padding-top: 4.5em;
+  font-size: 30px;
 }
 .link{
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  font-size: 0;
+  background: #f5f5f5;
+}
+.link a{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
   font-size: 30px;
 }
 span{

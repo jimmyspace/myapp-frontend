@@ -27,18 +27,6 @@ const actions = {
         commit('sayDate')
       }, 1000)
     })
-  },
-  getArticles({ commit }) {
-    $http.post('/api/articles', {
-        limit: 2,
-        nowPage: 1
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
   }
 }
 
