@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <!-- <jheader></jheader> -->
-    <div class="link">
+    <jheader></jheader>
+    <!-- <div class="link">
       <router-link to="/">Hellow</router-link>
       <router-link to="/List">List</router-link>
-    </div>
+    </div> -->
     <router-view/>
-    <!-- <jfooter></jfooter> --> 
+    <jfooter></jfooter> 
   </div>
 </template>
 
@@ -23,11 +23,6 @@ export default {
 </script>
 
 <style>
-#app{
-  text-align: center;
-  padding-top: 4.5em;
-  font-size: 30px;
-}
 .link{
   position: relative;
   margin: 0 auto;

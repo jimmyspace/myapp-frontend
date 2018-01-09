@@ -11,6 +11,9 @@ export default {
   name: 'Index',
   components: {
     Jside
+  },
+  mounted(){
+    this.$store.dispatch('getArticles')
   }
 }
 </script>

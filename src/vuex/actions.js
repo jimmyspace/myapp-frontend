@@ -1,5 +1,4 @@
 import $http from '@/ajax'
-
 const actions = {
   changeLogin({ commit }) {
     console.log("1秒前")
@@ -26,6 +25,18 @@ const actions = {
       setTimeout(() => {
         commit('sayDate')
       }, 1000)
+    })
+  },
+  getArticles({commit}){
+    $http.post('/api/articles', {
+      nowPage: 1,
+      limit:2
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
     })
   }
 }

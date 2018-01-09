@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div @click="changLoginMutation()">{{loginState?loginName:'未登录'}}</div>
-    <div @click="sayDate()">say something</div>
+    <div @click="sayDate()">sayDate</div>
     <div>最新的军事新闻</div>
     <ul>
       <li v-for="(item,index) in getNewMilitary" :style="item.isMilitary?'color:red':''" :key="index">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
@@ -32,11 +32,6 @@ export default {
     },
     changLoginMutation(){
       this.$store.commit('changeLogin')
-    },
-    sayBeaut(){
-      this.$store.dispatch('sayBeaut').then(()=>{
-        console.log("sb")
-      })
     },
     sayDate(){
       this.$store.dispatch('sayDate')

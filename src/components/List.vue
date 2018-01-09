@@ -13,10 +13,10 @@
     <ul>
       <li v-for="(item,index) in getNewMilitary" :style="item.isMilitary?'color:red':''" :key="index" @click="readNewAction(item.id)">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
     </ul>
-    <div @click="sortList()">list</div>
+    <!-- <div @click="sortList()">list</div>
     <ul>
       <li v-for="(item,index) in normalNews" :key="index" @click="actionSomething()">{{item.content}}--阅读<span>{{item.read}}</span>次</li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
