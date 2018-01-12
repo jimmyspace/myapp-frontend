@@ -1,16 +1,19 @@
 <template>
   <div class="index">
     <jside></jside>
+    <jshare></jshare>
     <router-view/>	
   </div>
 </template>
 
 <script>
 import Jside from '@/components/common/Jside'
+import Jshare from '@/components/common/Jshare'
 export default {
   name: 'Index',
   components: {
-    Jside
+    Jside,
+    Jshare
   },
   mounted(){
     this.$store.dispatch('getArticles')
