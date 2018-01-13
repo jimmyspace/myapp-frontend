@@ -1,45 +1,52 @@
 <template>
-  <div class="calendar-box">
-    <!-- 年份 月份 -->
-    <div class="months">
-      <ul class="month-list">
-        <li class="arrow prev" @click="pickPre(currentYear, currentMonth)">❮</li>
-        <li class="year-month">
-          <span class="choose-year">
-            <span>{{ currentYear }}</span>
-            <span>年</span>
-            <span>{{ currentMonth }}</span>
-            <span>月</span>
-            <span>{{ currentDay }}</span>
-            <span>日</span>
+  <div class="calendar">
+    <div class="calendar-input">
+      <input type="text" placeholder="选择日期" :value="calendarInput" @click="showCalendar=true" readonly="readonly">
+    </div>
+    <div class="calendar-box" v-show="showCalendar">
+      <!-- 年份 月份 -->
+      <div class="months">
+        <ul class="month-list">
+          <li class="arrow prev" @click="pickPreYear(currentYear, currentMonth)">❮</li>
+          <li class="arrow prev" @click="pickPre(currentYear, currentMonth)">❮</li>
+          <li class="year-month">
+            <span class="choose-year">
+              <span>{{ currentYear }}</span>
+              <span>年</span>
+              <span>{{ currentMonth }}</span>
+              <span>月</span>
+              <span>{{ currentDay }}</span>
+              <span>日</span>
+            </span>
+          </li>
+          <li class="arrow next" @click="pickNext(currentYear, currentMonth)">❯</li>
+          <li class="arrow next" @click="pickNextYear(currentYear, currentMonth)">❯</li>
+        </ul>
+      </div>
+      <!-- 星期 -->
+      <ul class="weekdays">
+        <li>一</li>
+        <li>二</li>
+        <li>三</li>
+        <li>四</li>
+        <li>五</li>
+        <li>六</li>
+        <li>日</li>
+      </ul>
+      <!-- 日期 -->
+      <ul class="days">
+        <li v-for="day in days" @click="pick(day)">
+          <!--本月-->
+          <span v-if="day.getMonth() + 1 != currentMonth" 
+                class="other-month">{{ day.getDate() }}</span>
+          <span v-else class="item" 
+                :class="{ 'active': day.getFullYear() == new Date().getFullYear() && day.getMonth() == new Date().getMonth() && day.getDate() == new Date().getDate() }">
+            <!--today-->
+            <a>{{ day.getDate() }}</a>
           </span>
         </li>
-        <li class="arrow next" @click="pickNext(currentYear, currentMonth)">❯</li>
       </ul>
     </div>
-    <!-- 星期 -->
-    <ul class="weekdays">
-      <li>一</li>
-      <li>二</li>
-      <li>三</li>
-      <li>四</li>
-      <li>五</li>
-      <li>六</li>
-      <li>日</li>
-    </ul>
-    <!-- 日期 -->
-    <ul class="days">
-      <li v-for="day in days">
-        <!--本月-->
-        <span v-if="day.getMonth() + 1 != currentMonth" 
-              class="other-month">{{ day.getDate() }}</span>
-        <span v-else class="item" 
-              :class="{ 'active': day.getFullYear() == new Date().getFullYear() && day.getMonth() == new Date().getMonth() && day.getDate() == new Date().getDate() }">
-          <!--today-->
-          <a>{{ day.getDate() }}</a>
-        </span>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -52,7 +59,13 @@
         currentMonth: 1,
         currentYear: 1970,
         currentWeek: 1,
-        days: []
+        days: [],
+        showCalendar: false//是否显示日历选择框
+      }
+    },
+    computed: {
+      calendarInput() {
+        return this.formatDate(this.currentYear, this.currentMonth, this.currentDay)
       }
     },
     mounted() {
@@ -83,7 +96,11 @@
         }
       },
       pick(date) {
-        alert(this.formatDate(date.getFullYear(), date.getMonth() + 1, date.getDate()))
+        this.currentDay = date.getDate()
+        this.currentYear = date.getFullYear()
+        this.currentMonth = date.getMonth() + 1
+        this.currentWeek = date.getDay()
+        this.showCalendar = false
       },
       pickPre(year, month) {
         //  setDate(0); 上月最后一天
@@ -97,6 +114,21 @@
         const d = new Date(this.formatDate(year, month, 1))
         d.setDate(35)
         this.initData(this.formatDate(d.getFullYear(), d.getMonth() + 1, 1))
+      },
+      pickPreYear(year, month) {
+        //  setDate(0); 上月最后一天
+        //  setDate(-1); 上月倒数第二天
+        //  setDate(dx) 参数dx为 上月最后一天的前后dx天
+        const d = new Date(this.formatDate(this.currentYear - 1, this.currentMonth, 1))
+        let theMonth = d.getMonth() + 1
+        d.setDate(0)
+        this.initData(this.formatDate(d.getFullYear(), theMonth, 1))
+      },
+      pickNextYear(year, month) {
+        const d = new Date(this.formatDate(this.currentYear + 1, this.currentMonth, 1))
+        let theMonth = d.getMonth() + 1
+        d.setDate(35)
+        this.initData(this.formatDate(d.getFullYear(), theMonth, 1))
       },
       pickYear(year, month) {
         alert(year + "," + month)
@@ -116,6 +148,7 @@
 
 <style lang="less" scoped>
   .calendar-box {
+    width: 250px;
     min-height: 17em;
     > .months {
       margin-bottom: .5em;
@@ -190,7 +223,7 @@
             // background-color: lighten($module-hover-bg, 10%);
           }
           &.active {
-            // background-color: $module-hover-bg;
+            background-color: #ccc;
           }
         }
       }
