@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <jheader></jheader> -->
+    <jheader></jheader>
     <!-- <div class="link">
       <router-link to="/">Hellow</router-link>
       <router-link to="/List">List</router-link>
@@ -34,10 +34,6 @@ export default {
   display: inline-block;
   width: 50%;
   text-align: center;
-  font-size: 30px;
-}
-span{
-  color: red;
   font-size: 30px;
 }
 </style>
