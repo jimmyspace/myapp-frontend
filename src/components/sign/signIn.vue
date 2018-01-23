@@ -1,6 +1,6 @@
 <template>
   <div class="sign">
-    注册登录
+    登录
   </div>
 </template>
 
@@ -12,5 +12,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+@import "../../assets/less/commonSign";
 </style>

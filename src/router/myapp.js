@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
-import Sign from '@/components/Sign'
+import signUp from '@/components/sign/signUp'
 import Article from '@/components/common/Article'
 import Articles from '@/components/common/Articles'
 import Edit from '@/components/common/Edit'
@@ -41,9 +41,9 @@ export default new Router({
       ]
     },
     {
-      path: '/sign',
-      name: 'Sign',
-      component: Sign
+      path: '/signup',
+      name: 'signUp',
+      component: signUp
     }
   ]
 })
