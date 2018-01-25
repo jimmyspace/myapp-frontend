@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style>
+@import "./assets/styles/reset.css";
 .link{
   position: relative;
   margin: 0 auto;
