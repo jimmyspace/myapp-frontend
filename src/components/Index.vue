@@ -15,7 +15,10 @@ export default {
     Jside,
     Jshare
   },
-  mounted(){
+  beforeRouteEnter (to, from, next) {
+    next()
+  },
+  created(){
     this.$store.dispatch('getArticles')
   }
 }

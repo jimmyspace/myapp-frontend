@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <jheader></jheader>
-    <!-- <div class="link">
-      <router-link to="/">Hellow</router-link>
-      <router-link to="/List">List</router-link>
-    </div> -->
     <router-view/>
-    <!-- <jfooter></jfooter>  -->
   </div>
 </template>
 

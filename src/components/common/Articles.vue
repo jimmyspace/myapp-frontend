@@ -2,14 +2,13 @@
   <div class="articles">
   	<h2 class="title">{{title}}</h2>
     <ul class="articlesList">
-      <li class="articlesListItem">
-        <div class="itemTitle">第一篇文章标题</div>
-        <p class="itemContent">文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+      <li class="articlesListItem" v-for="(item,index) in articles" :key="index">
+        <div class="itemTitle">{{item.title}}</div>
+        <p class="itemContent">{{item.content}}</p>
         <div class="itemMeta">
-          <span class="date">2017-06-06</span>
-          <span class="views">11</span>
+          <span class="date">{{item.ctime}}</span>
           <span class="comments">2</span>
-          <span class="favorite">5</span>
+          <span class="favorite">{{item.favourite}}</span>
         </div>
       </li>
     </ul>
@@ -24,6 +23,11 @@ export default {
     return {
       title: '全部文章',
       pathname: ''
+    }
+  },
+  computed: {
+    articles (){
+      return this.$store.state.articles.list
     }
   },
   watch: {
