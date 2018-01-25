@@ -2,7 +2,7 @@
   <div class="index">
     <jside></jside>
     <jshare></jshare>
-    <router-view/>	
+    <router-view/>
   </div>
 </template>
 
@@ -15,11 +15,8 @@ export default {
     Jside,
     Jshare
   },
-  beforeRouteEnter (to, from, next) {
-    next()
-  },
   created(){
-    this.$store.dispatch('getArticles')
+    //this.$store.dispatch('getArticles')
   }
 }
 </script>

@@ -1,13 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/Index'
-import signUp from '@/components/sign/signUp'
-import signIn from '@/components/sign/signIn'
-import forgetPassword from '@/components/sign/forgetPassword'
-import Article from '@/components/common/Article'
-import Articles from '@/components/common/Articles'
-import Edit from '@/components/common/Edit'
-import User from '@/components/common/User'
+const Index = () =>
+  import ('@/components/Index')
+const Music = () =>
+  import ('@/components/Music')
+const Games = () =>
+  import ('@/components/Games')
+const signUp = () =>
+  import ('@/components/sign/signUp')
+const signIn = () =>
+  import ('@/components/sign/signIn')
+const forgetPassword = () =>
+  import ('@/components/sign/forgetPassword')
+const Article = () =>
+  import ('@/components/common/Article')
+const Articles = () =>
+  import ('@/components/common/Articles')
+const Edit = () =>
+  import ('@/components/common/Edit')
+const User = () =>
+  import ('@/components/common/User')
 
 Vue.use(Router)
 
@@ -41,6 +53,16 @@ export default new Router({
           component: User
         },
       ]
+    },
+    {
+      path: '/music',
+      name: 'Music',
+      component: Music
+    },
+    {
+      path: '/games',
+      name: 'Games',
+      component: Games
     },
     {
       path: '/signup',

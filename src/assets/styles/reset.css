@@ -156,3 +156,13 @@ body {
   color: #2c3e50;
   background: #f2f2f2;
 }
+
+button{
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: none;
+  outline: none;
+}

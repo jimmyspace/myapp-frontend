@@ -11,10 +11,31 @@ const state = {
   loginState: false,
   loginName: 'Jimmyspace',
   articles: {
-    list:[],
+    list: [],
     message: '',
     nowPage: 1,
-    pageSize: 10
+    pageSize: 10,
+    all: false,
+    loaded: false, //加载过
+    loading: false //加载中
+  },
+  codeArticles: {
+    list: [],
+    message: '',
+    nowPage: 1,
+    pageSize: 10,
+    all: false,
+    loaded: false, //加载过
+    loading: false //加载中
+  },
+  moodArticles: {
+    list: [],
+    message: '',
+    nowPage: 1,
+    pageSize: 10,
+    all: false,
+    loaded: false, //加载过
+    loading: false //加载中
   }
 }
 

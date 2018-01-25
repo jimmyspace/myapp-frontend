@@ -1,11 +1,11 @@
 <template>
   <div class="jside">
   	<ul class="sideNav">
-		<li class="sideItem"><router-link to="/">Home</router-link></li>
-		<li class="sideItem"><router-link to="/code">Code</router-link></li>
-		<li class="sideItem"><router-link to="/mood">Mood</router-link></li>
-		<li class="sideItem"><router-link to="/mood">Music</router-link></li>
-		<li class="sideItem"><router-link to="/mood">Mood</router-link></li>
+		<li class="sideItem"><router-link :class="{'active':active==='/'}" to="/">Home</router-link></li>
+		<li class="sideItem"><router-link :class="{'active':active==='/code'}" to="/code">Code</router-link></li>
+		<li class="sideItem"><router-link :class="{'active':active==='/mood'}" to="/mood">Mood</router-link></li>
+		<li class="sideItem"><router-link :class="{'active':active==='/music'}" to="/music">Music</router-link></li>
+		<li class="sideItem"><router-link :class="{'active':active==='/games'}" to="/games">GAMES</router-link></li>
   	</ul>
   </div>
 </template>
@@ -14,7 +14,23 @@
 
 export default {
   name: 'Jside',
+  data (){
+  	return {
+  	  active: '/'
+  	}
+  },
+  watch: {
+    //检测路由变化
+    '$route': 'changeActive'
+  },
+  created (){
+  	this.changeActive()
+  },
   methods: {
+  	changeActive(){
+  	  let pathname = location.pathname
+  	  this.active = pathname
+  	}
   }
 }
 </script>

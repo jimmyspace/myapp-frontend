@@ -2,6 +2,7 @@
   <div id="app">
     <jheader></jheader>
     <router-view/>
+    <jfooter></jfooter>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 @import "./assets/styles/reset.css";
 .link{
   position: relative;
