@@ -19,3 +19,9 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+### 第一个版本时间计划表
+* 2018-02-01 文章列表正常访问，发表
+* 2018-02-10 登录注册模块
+* 2018 春节期间优化界面
+* 2018 元宵节正式开发
