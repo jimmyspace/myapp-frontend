@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <jside></jside>
-    <jshare></jshare>
+    <!-- <jshare></jshare> -->
     <router-view/>
   </div>
 </template>

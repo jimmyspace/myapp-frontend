@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar">
+  <div class="calendar" style="background:hsla(0,0%,100%,.5)">
     <div class="calendar-input">
       <input type="text" placeholder="选择日期" :value="calendarInput" @click="showCalendar=true" readonly="readonly">
     </div>

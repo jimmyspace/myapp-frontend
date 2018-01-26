@@ -3,34 +3,25 @@
     <jheader></jheader>
     <router-view/>
     <jfooter></jfooter>
+    <jbackground></jbackground>
   </div>
 </template>
 
 <script>
 import Jheader from '@/components/common/Jheader'
 import Jfooter from '@/components/common/Jfooter'
+import Jbackground from '@/components/common/Jbackground'
 export default {
   name: 'app',
   components: {
     Jheader,
-    Jfooter
+    Jfooter,
+    Jbackground
   }
 }
 </script>
 
 <style lang="less">
 @import "./assets/styles/reset.css";
-.link{
-  position: relative;
-  margin: 0 auto;
-  width: 500px;
-  font-size: 0;
-  background: #f5f5f5;
-}
-.link a{
-  display: inline-block;
-  width: 50%;
-  text-align: center;
-  font-size: 30px;
-}
+
 </style>

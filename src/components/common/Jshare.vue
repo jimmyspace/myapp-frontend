@@ -26,6 +26,6 @@ export default {
   width: 250px;
   top: 100px;
   right: 0;
-  z-index: 999;
+  z-index: 99;
 }
 </style>

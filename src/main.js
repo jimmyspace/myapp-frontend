@@ -6,6 +6,9 @@ import App from './App'
 import router from './router/myapp'
 import store from './vuex/state'
 
+import particlesJS from 'particles.js'
+Vue.use(particlesJS)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

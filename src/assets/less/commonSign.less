@@ -1,11 +1,63 @@
-.sign{
+body {
+  min-height: 500px;
+}
+
+.sign {
   position: relative;
+  margin: 10em auto;
   padding: 40px;
   width: 100%;
   max-width: 400px;
-  background: rgba(250,250,250,05);
+  background: rgba(250, 250, 250, .5);
   font-size: 16px;
-  .signForm{
-	
+  .signForm {
+    position: relative;
+    .signTitle {
+      font-size: 18px;
+      text-align: center;
+      color: #777;
+    }
+    .signInput {
+      position: relative;
+      margin-top: 1.5em;
+      input {
+        display: inline-block;
+        height: 2.5em;
+        width: 100%;
+        text-align: center;
+        border: none;
+        outline: none;
+      }
+      .sendCode {
+        position: absolute;
+        top: 0;
+        right: 1em;
+        height: 2.5em;
+        line-height: 2.5em;
+        cursor: not-allowed;
+        color: #999;
+        &.active {
+          color: #333;
+          cursor: pointer;
+        }
+      }
+    }
+    .submitBtn {
+      margin-top: 1.5em;
+      height: 2.5em;
+      width: 100%;
+      text-align: center;
+      border: none;
+      outline: none;
+      background-color: #eee;
+      cursor: not-allowed;
+      &.active {
+        cursor: pointer;
+        background: rgba(250, 250, 250, .8);
+      }
+      &.loading {
+        cursor: wait;
+      }
+    }
   }
 }
