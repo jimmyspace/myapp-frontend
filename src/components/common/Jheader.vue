@@ -4,8 +4,10 @@
       <div class="title"><router-link to="/">JIMMYSPACE</router-link></div>
       <div class="userArea">
         <router-link to="/signin">Sign in</router-link>
-        <span>or</span>
+        <span>|</span>
         <router-link to="/signup">Sign up</router-link>
+        <span>|</span>
+        <router-link to="/forgetpassword">Forget password</router-link>
       </div>
     </nav>
   </header>
@@ -56,6 +58,7 @@ export default {
         }
       }
       span{
+        padding: 0 0.2em;
         text-decoration: none;
         color: #666;
       }

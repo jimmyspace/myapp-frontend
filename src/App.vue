@@ -4,6 +4,7 @@
     <router-view/>
     <jfooter></jfooter>
     <jbackground></jbackground>
+    <jalert></jalert>  
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Jheader from '@/components/common/Jheader'
 import Jfooter from '@/components/common/Jfooter'
 import Jbackground from '@/components/common/Jbackground'
+import Jalert from '@/components/common/Jalert'
 export default {
   name: 'app',
   components: {
     Jheader,
     Jfooter,
-    Jbackground
+    Jbackground,
+    Jalert
   }
 }
 </script>

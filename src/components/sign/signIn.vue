@@ -3,10 +3,10 @@
     <div class="signForm">
 	    <h2 class="signTitle">Welcome Jimmyspace</h2>
       <div class="signInput">
-      	<input type="text" placeholder="请输入正确的邮箱地址" maxlength="20">
+      	<input type="text" placeholder="请输入正确的邮箱地址" maxlength="20" autocomplete="off">
       </div>
       <div class="signInput">
-      	<input type="password" placeholder="请输入6-12密码" maxlength="12">
+      	<input type="password" placeholder="请输入6-12密码" maxlength="12" autocomplete="off">
       </div>
       <button type="button" class="submitBtn">登录</button>
     </div>
