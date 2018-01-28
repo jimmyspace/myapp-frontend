@@ -36,6 +36,12 @@ const state = {
     all: false,
     loaded: false, //加载过
     loading: false //加载中
+  },
+  jalert: {
+    type: 'success',
+    info: '发送成功',
+    time: 3,
+    status: false
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="jalert" v-show="jalert.time !== 0">
-  	<div class="jalertBox">
+  <div class="jalert">
+  	<div class="jalertBox" :class="[status?'show':'', typeClass]">
   	  <span>{{jalert.info}}</span>
   	</div>
   </div>
@@ -9,26 +9,16 @@
 <script>
 export default {
   name: 'Jalert',
-  data (){
-  	return {
-  	  jalert: {
-  	  	type: 'success',
-  	  	info: '发送成功',
-  	  	time: 3
-  	  }
-  	}
-  },
-  methods: {
-  	timer(){
-  	  let self = this
-  	  if(self.jalert.time !== 0){
-  	  	self.jalert.time --
-  	  	setTimeout(self.timer, 1000)
-  	  }
-  	}
-  },
-  mounted (){
-  	//this.timer()
+  computed: {
+    jalert(){
+      return this.$store.state.jalert
+    },
+    status(){
+      return this.$store.state.jalert.status
+    },
+    typeClass(){
+      return this.$store.state.jalert.type
+    }
   }
 }
 </script>
@@ -45,11 +35,23 @@ export default {
 	z-index: 99999;
 	.jalertBox{
 	  position: relative; 
+    top: 19em;
+    margin: 0 auto;
+    max-width: 20em;
+    padding: 1em;
+    opacity: 0;
+    background: #ddd;
+    transition: all 1s;
+    &.success{
+      color: #0088f5;
+    }
+    &.error{
+      color: red;
+    }
+    &.show{
       top: 20em;
-      margin: 0 auto;
-      max-width: 10em;
-      padding: 1em;
-      background: #ccc;
+      opacity: .8;
+    }
 	}
 }
 </style>

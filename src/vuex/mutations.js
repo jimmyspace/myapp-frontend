@@ -28,6 +28,21 @@ const mutations = {
     if (payload.list.length < state.moodArticles.pageSize) {
       state.moodArticles.all = true
     }
+  },
+  timerStart(state, payload){
+    state.jalert.time = payload.time
+  },
+  //alert 定时器
+  timer(state, payload){
+    state.jalert.type = payload.type
+    state.jalert.info = payload.info
+
+    state.jalert.time --
+    if(state.jalert.time == 0){
+      state.jalert.status = false
+    }else{
+      state.jalert.status = true
+    }
   }
 }
 

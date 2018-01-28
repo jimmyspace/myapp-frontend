@@ -1,4 +1,5 @@
 import $http from '@/ajax'
+let timerObj
 const actions = {
   getArticles({ commit, state }) {
     $http.post('/api/articles', {
@@ -25,7 +26,7 @@ const actions = {
         commit('getArticles', {
           list: [],
           message: '获取失败',
-          nowPage: fstate.articles.nowPage
+          nowPage: state.articles.nowPage
         })
       })
   },
@@ -86,6 +87,18 @@ const actions = {
           nowPage: state.moodArticles.nowPage
         })
       })
+  },
+  //alert 定时器
+  timer({ dispatch, commit, state },payload){
+    timerObj = setTimeout(function(){
+      commit('timer', payload)
+      if(state.jalert.time === 0){
+        clearTimeout(timerObj)
+      }else{
+        dispatch('timer', payload)
+      }
+      
+    },1000)
   }
 }
 
