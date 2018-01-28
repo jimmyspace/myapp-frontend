@@ -31,8 +31,8 @@ const actions = {
       })
   },
   getCodeArticles({ commit, state }) {
-    $http.post('/api/articles', {
-        nowPage: state.codeArticles.nowPage + 1,
+    $http.post('/api/selectArticles', {
+        nowPage: state.codeArticles.nowPage,
         limit: state.codeArticles.pageSize,
         type: 1
       })
@@ -60,8 +60,8 @@ const actions = {
       })
   },
   getMoodArticles({ commit, state }) {
-    $http.post('/api/articles', {
-        nowPage: state.moodArticles.nowPage + 1,
+    $http.post('/api/selectArticles', {
+        nowPage: state.moodArticles.nowPage,
         limit: state.moodArticles.pageSize,
         type: 2
       })

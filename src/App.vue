@@ -26,5 +26,6 @@ export default {
 
 <style lang="less">
 @import "./assets/styles/reset.css";
+@import "./assets/fonts/iconfont.css";
 
 </style>
