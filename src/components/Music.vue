@@ -1,12 +1,14 @@
 <template>
-  <div class="index">
-    音乐
+  <div class="music">
+    <div class="text">
+  	  敬请期待
+  	</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Index',
+  name: 'Music',
   created(){
     //this.$store.dispatch('getArticles')
   }
@@ -15,5 +17,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
+.music{
+  position: relative;
+  width: 75em;
+  min-height: 16em;
+  margin: 4.5em auto 0;
+  overflow: hidden;
+  .text{
+  	padding-top: 10em;
+  	text-align: center;
+  	line-height: 3em;
+  	font-size: 18px;
+  }
+}
 </style>

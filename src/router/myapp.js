@@ -20,6 +20,8 @@ const Edit = () =>
   import ('@/components/common/Edit')
 const User = () =>
   import ('@/components/common/User')
+const notFound = () =>
+  import ('@/components/notFound')
 
 Vue.use(Router)
 
@@ -78,6 +80,7 @@ export default new Router({
       path: '/forgetpassword',
       name: 'forgetPassword',
       component: forgetPassword
-    }
+    },
+    { path: '*', component: notFound}
   ]
 })
