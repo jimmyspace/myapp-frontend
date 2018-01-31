@@ -25,3 +25,13 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * 2018-02-10 登录注册模块
 * 2018 春节期间优化界面
 * 2018 元宵节正式开发
+
+### 第二个版本任务
+* javascript高级函数，常用技巧
+* http => https
+* 网站安全相关处理
+* Socket.IO
+* canvas游戏
+* 微信小程序游戏
+* H5plus打包app尝试
+
