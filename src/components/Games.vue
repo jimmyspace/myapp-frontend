@@ -1,7 +1,7 @@
 <template>
   <div class="games">
   	<div class="text">
-  	  敬请期待
+  	  <img src="../assets/images/waiting.jpg" alt="">
   	</div>
   </div>
 </template>
@@ -24,10 +24,14 @@ export default {
   margin: 4.5em auto 0;
   overflow: hidden;
   .text{
-  	padding-top: 10em;
-  	text-align: center;
-  	line-height: 3em;
-  	font-size: 18px;
+    position: relative;
+    padding-top: 5em;
+    text-align: center;
+    line-height: 3em;
+    font-size: 18px;
+    img{
+      opacity: 0.2
+    }
   }
 }
 </style>
