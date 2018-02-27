@@ -4,6 +4,7 @@ import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
 import editModule from './edit/index'
+import articleMoudle from './article/index'
 
 Vue.use(Vuex)
 
@@ -47,7 +48,8 @@ const state = {
 
 export default new Vuex.Store({
   modules:{
-    editModule:editModule
+    editModule:editModule,
+    articleMoudle:articleMoudle
   },
   state,
   mutations,

@@ -82,8 +82,8 @@ export default {
       }
     }
   },
-  methods:{
-    publish(){
+  methods: {
+    publish() {
       this.$store.dispatch('editModule/publish')
     }
   }
@@ -92,6 +92,10 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
+body {
+  min-height: 60em;
+}
+
 .edit {
   float: left;
   width: 42.5em;
