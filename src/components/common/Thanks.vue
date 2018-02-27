@@ -1,16 +1,12 @@
 <template>
-  <div class="jshare">
-    <calendar></calendar>
+  <div class="thanks">
+    
   </div>
 </template>
 
 <script>
-import Calendar from '@/components/common/Calendar'
 export default {
   name: 'Jshare',
-  components: {
-    Calendar
-  },
   data () {
     return {
       
@@ -21,7 +17,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-.jshare{
+.thanks{
   position: absolute;
   width: 250px;
   top: 5.5em;

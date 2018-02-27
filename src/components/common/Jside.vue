@@ -7,6 +7,7 @@
 		<li class="sideItem"><router-link :class="{'active':active==='/mood'}" to="/mood"><i class="iconfont icon-yanjing"></i>&nbsp;&nbsp;Mood</router-link></li>
 		<li class="sideItem"><router-link :class="{'active':active==='/music'}" to="/music"><i class="iconfont icon-yinle"></i>&nbsp;&nbsp;Music</router-link></li>
 		<li class="sideItem"><router-link :class="{'active':active==='/games'}" to="/games"><i class="iconfont icon-youxi"></i>&nbsp;&nbsp;GAMES</router-link></li>
+    <li class="sideItem"><router-link :class="{'active':active==='/thanks'}" to="/thanks"><i class="iconfont icon-youxi"></i>&nbsp;&nbsp;THANKS</router-link></li>
   	</ul>
   </div>
 </template>

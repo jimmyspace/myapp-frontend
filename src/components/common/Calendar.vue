@@ -1,14 +1,14 @@
 <template>
   <div class="calendar" style="background:hsla(0,0%,100%,.5)">
-    <div class="calendar-input">
+    <!-- <div class="calendar-input">
       <input type="text" placeholder="选择日期" :value="calendarInput" @click="showCalendar=true" readonly="readonly">
-    </div>
-    <div class="calendar-box" v-show="showCalendar">
+    </div> -->
+    <div class="calendar-box">
       <!-- 年份 月份 -->
       <div class="months">
         <ul class="month-list">
-          <li class="arrow prev" @click="pickPreYear(currentYear, currentMonth)">❮</li>
-          <li class="arrow prev" @click="pickPre(currentYear, currentMonth)">❮</li>
+          <li class="arrow prev arrow_two" @click="pickPreYear(currentYear, currentMonth)">❮</li>
+          <li class="arrow prev arrow_one" @click="pickPre(currentYear, currentMonth)">❮</li>
           <li class="year-month">
             <span class="choose-year">
               <span>{{ currentYear }}</span>
@@ -19,8 +19,8 @@
               <span>日</span>
             </span>
           </li>
-          <li class="arrow next" @click="pickNext(currentYear, currentMonth)">❯</li>
-          <li class="arrow next" @click="pickNextYear(currentYear, currentMonth)">❯</li>
+          <li class="arrow next arrow_one" @click="pickNext(currentYear, currentMonth)">❯</li>
+          <li class="arrow next arrow_two" @click="pickNextYear(currentYear, currentMonth)">❯</li>
         </ul>
       </div>
       <!-- 星期 -->
@@ -152,9 +152,10 @@
     min-height: 17em;
     > .months {
       margin-bottom: .5em;
+      overflow: hidden;
       > .month-list {
         padding: 0;
-        margin: 0;
+        margin: 0.5em 0 0 0;
         list-style: none;
         overflow: hidden;
         > li {
@@ -166,17 +167,21 @@
             width: 11.4em;
           }
           &.arrow {
-            width: 2em;
+            width: 1em;
             // background-color: $module-hover-bg;
             cursor: pointer;
             &:hover {
               // background-color: darken($module-hover-bg, 15%);
             }
             &.prev {
-              margin-right: 1em;
+              &.arrow_two{
+                margin-left: 1.2em;
+              }
             }
             &.next {
-              margin-left: 1em;
+              &.arrow_two{
+                margin-right: 1.2em;
+              }
             }
           }
         }
@@ -185,7 +190,7 @@
     > .days,
     > .weekdays {
       list-style: none;
-      padding: 0;
+      padding: 0.5em;
       margin: 0;
       overflow: hidden;
       margin-bottom: .5em;
@@ -196,6 +201,7 @@
       }
     }
     > .weekdays {
+      padding: 0.5em;
       height: 2em;
       line-height: 2em;
     }

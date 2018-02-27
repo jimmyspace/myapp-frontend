@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <jside></jside>
-    <!-- <jshare></jshare> -->
+    <jshare></jshare>
     <router-view/>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
 .index{
 	position: relative;
 	width: 75em;
-  min-height: 16em;
+  min-height: 26em;
 	margin: 0 auto;
   overflow: hidden;
 }

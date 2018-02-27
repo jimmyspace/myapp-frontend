@@ -22,6 +22,8 @@ const User = () =>
   import ('@/components/common/User')
 const notFound = () =>
   import ('@/components/notFound')
+const Thanks = () =>
+  import ('@/components/Thanks')
 
 Vue.use(Router)
 
@@ -77,10 +79,15 @@ export default new Router({
       component: signIn
     },
     {
+      path: '/thanks',
+      name: 'Thanks',
+      component: Thanks
+    },
+    {
       path: '/forgetpassword',
       name: 'forgetPassword',
       component: forgetPassword
     },
-    { path: '*', component: notFound}
+    { path: '*', component: notFound }
   ]
 })
