@@ -1,8 +1,8 @@
 <template>
   <div class="index">
-    <jside></jside>
+    <!-- <jside></jside> -->
     <jshare></jshare>
-    <router-view/>
+    <!-- <router-view/> -->
   </div>
 </template>
 
