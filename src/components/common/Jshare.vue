@@ -1,15 +1,18 @@
 <template>
   <div class="jshare">
     <calendar></calendar>
+    <talking></talking>  
   </div>
 </template>
 
 <script>
 import Calendar from '@/components/common/Calendar'
+import Talking from '@/components/common/Talking'
 export default {
   name: 'Jshare',
   components: {
-    Calendar
+    Calendar,
+    Talking
   },
   data () {
     return {
